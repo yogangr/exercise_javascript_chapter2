@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nomor 1
+      function tarikSaldo(x, y) {
+        let biaya = 0.5;
+        if (x % 5 == 0) {
+          if (x <= y + biaya) {
+            let sisa = y - x - biaya;
+            console.log("Berhasil menarik saldo sebesar : " + sisa);
+          } else {
+            console.log("Saldo tidak mencukupi");
+          }
+        } else {
+          console.log("Saldo bukan kelipatan 5, sisa saldo: " + y);
+        }
+      }
+
+      tarikSaldo(30, 20);
+      tarikSaldo(42, 100);
+
+      //   Nomor 2
+      function solution(n) {
+        let hasil;
+        if (n > 90 && n <= 100) {
+          hasil = "A";
+        } else if (n > 80) {
+          hasil = "B";
+        } else if (n > 70) {
+          hasil = "C";
+        } else if (n > 60) {
+          hasil = "D";
+        } else if (n <= 60) {
+          hasil = "E";
+        }
+        return hasil;
+      }
+      console.log(solution(95));
+      console.log(solution(76));
+
+      // Nomor 3
+      function gantiSimbol(ip) {
+        let ganti = "";
+        for (let i = 0; i < ip.length; i++) {
+          if (ip[i] === ".") {
+            ganti += "()";
+          } else {
+            ganti += ip[i];
+          }
+        }
+        return ganti;
+      }
+      console.log(gantiSimbol("1.1.1.1"));
+      console.log(gantiSimbol("192.168.1.1"));
+
+      // Nomor 4
+      function jumlahkanDigit(n) {
+        let sum = 0;
+        while (n > 0) {
+          sum += n % 10;
+          n = Math.floor(n / 10);
+        }
+        return sum;
+      }
+      console.log(jumlahkanDigit(123));
+      console.log(jumlahkanDigit(2021));
+
+      // Nomor 5
+      function checkDistance(s) {
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "a") {
+            for (let j = i + 1; j < s.length; j++) {
+              if (s[j] === "b" && j - i > 3) {
+                return "YES";
+              }
+            }
+          } else if (s[i] === "b") {
+            for (let j = i + 1; j < s.length; j++) {
+              if (s[j] === "a" && j - i > 3) {
+                return "YES";
+              }
+            }
+          }
+        }
+        return "NO";
+      }
+
+      console.log(checkDistance("cdaecba"));
+      console.log(checkDistance("acdebae"));
+    </script>
+  </body>
+</html>
